@@ -14,15 +14,15 @@ def hello_world():
     </head>
     <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #282c34; color: white; text-align: center; padding-top: 100px;">
         
-        <h1 style="font-size: 50px; color: #61dafb;">
-            Четвертый тест с добавлением текста
+        <h1 style="font-size: 60px; color: #61dafb;">
+            Пятый тест с добавлением текста
         </h1>
         
-        <p style="font-size: 24px;">
+        <p style="font-size: 20px;">
             Микросервис успешно развернут в кластере через Jenkins CI/CD!
         </p>
         
-        <p style="font-size: 18px; color: #98c379; font-style: italic;">
+        <p style="font-size: 14px; color: #98c379; font-style: italic;">
             Теперь мы умеем менять дизайн, шрифты и цвета напрямую из кода.
         </p>
         
