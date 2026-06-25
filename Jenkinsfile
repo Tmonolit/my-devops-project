@@ -23,6 +23,7 @@ pipeline {
     }
     
     environment {
+        // Ваш ID реестра уже вписан
         REGISTRY_ID = 'crpch0cjeu3o3a0vqps4'
         IMAGE_NAME  = "cr.yandex/${REGISTRY_ID}/sber-app:latest"
     }
@@ -44,7 +45,14 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'yandex-registry-cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh '''
                         mkdir -p /kaniko/.docker
-                        echo '{"auths": {"cr.yandex": {"username": "'$USER'", "password": "'$PASS'"}}}' > /kaniko/.docker/config.json
+                        
+                        # Профессиональный подход: кодируем связку логин:пароль в Base64
+                        AUTH=$(echo -n "$USER:$PASS" | base64 | tr -d '\n' | tr -d '\r')
+                        
+                        # Безопасно записываем закодированный ключ
+                        echo '{"auths": {"cr.yandex": {"auth": "'$AUTH'"}}}' > /kaniko/.docker/config.json
+                        
+                        # Запускаем сборку
                         /kaniko/executor --context `pwd` --dockerfile `pwd`/Dockerfile --destination $IMAGE_NAME
                         '''
                     }
