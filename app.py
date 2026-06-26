@@ -15,7 +15,7 @@ def hello_world():
     <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #282c34; color: white; text-align: center; padding-top: 100px;">
         
         <h1 style="font-size: 60px; color: #61dafb;">
-            Пятый тест с добавлением текста
+            Шестой тест с добавлением текста
         </h1>
         
         <p style="font-size: 20px;">
