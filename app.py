@@ -7,7 +7,8 @@ def hello_world():
     # Используем тройные кавычки для многострочного текста
     return '''
     <!DOCTYPE html>
-   
+    <html>
+    <head>
         <meta charset="utf-8">
         <title>Мой DevOps Проект</title>
     </head>
